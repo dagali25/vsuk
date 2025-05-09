@@ -1,11 +1,11 @@
 /* Root Variables */
 :root {
-    --primary: #ff6b35; /* Orange */
-    --primary-dark: #e05a2b;
-    --secondary: #121212; /* Dark background */
+    --primary: #ff7f50; /* Coral */
+    --primary-dark: #ff6347; /* Tomato */
+    --secondary: #20232a; /* Dark background */
     --accent: #ffffff; /* White for text */
     --text-muted: #a9a9a9;
-    --gradient: linear-gradient(135deg, #ff6b35, #e05a2b);
+    --gradient: linear-gradient(135deg, #ff7f50, #ff6347);
 }
 
 /* Universal Reset */
@@ -26,7 +26,7 @@ body {
 
 /* Header */
 header {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     color: var(--accent);
     padding: 1rem 2rem;
     position: fixed;
@@ -129,22 +129,6 @@ nav ul li a:hover {
     margin-bottom: 2rem;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.feature-card {
-    background: var(--secondary);
-    border: 2px solid var(--primary);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    color: var(--accent);
-}
-
 /* Gallery Section */
 .gallery {
     display: grid;
@@ -158,6 +142,7 @@ nav ul li a:hover {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .gallery-item img {
@@ -169,6 +154,42 @@ nav ul li a:hover {
 
 .gallery-item img:hover {
     transform: scale(1.1);
+}
+
+/* Enlarge Image */
+.enlarged-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.enlarged-image img {
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.enlarged-image .close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: var(--primary);
+    color: var(--accent);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
 }
 
 /* CTA Section */
