@@ -1,7 +1,7 @@
 /* Root Variables */
 :root {
     --primary: #546e7a; /* Blue-grey */
-    --secondary: #eceff1; /* Light grey */
+    --secondary: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
     --accent: #ffffff; /* White */
     --highlight: #cfd8dc; /* Lighter blue-grey */
     --gradient: linear-gradient(135deg, #546e7a, #37474f); /* Gradients for buttons */
@@ -15,14 +15,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Body */
-body {
-    background-color: var(--secondary);
-    color: var(--primary);
-    text-align: center;
-    line-height: 1.6;
-}
-
 /* Header */
 .header-container {
     display: flex;
@@ -34,6 +26,7 @@ body {
     position: fixed;
     width: 100%;
     z-index: 100;
+    opacity: 0.9;
 }
 
 nav ul {
@@ -60,6 +53,9 @@ nav ul li a:hover {
     color: var(--accent);
     border-radius: 15px;
     margin-top: 4rem;
+    max-width: 90%;
+    margin: auto;
+    backdrop-filter: blur(5px);
 }
 
 .hero-content h1 {
@@ -85,28 +81,38 @@ nav ul li a:hover {
     background: var(--highlight);
 }
 
-/* Tiles */
+/* Sections */
+.section {
+    padding: 6rem 2rem;
+    max-width: 90%;
+    margin: auto;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+
 .tile-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    padding: 1rem;
 }
 
 .tile {
-    background: var(--accent);
+    background: var(--secondary);
     color: var(--primary);
     padding: 1rem;
     border-radius: 10px;
+    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
 }
 
 .tile:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    background: var(--highlight);
 }
 
 .tile img {
@@ -114,10 +120,28 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
-/* Footer */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 0.8rem 1.5rem;
+    background: var(--primary);
+    color: var(--accent);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 footer {
     padding: 1rem;
     background: var(--primary);
     color: var(--accent);
-    margin-top: 2rem;
+    text-align: center;
 }
