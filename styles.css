@@ -4,7 +4,7 @@
     --secondary-color: #f4f4f4; /* Light Grey */
     --accent-color: #ffffff; /* White */
     --text-color: #333333; /* Dark text */
-    --button-hover: #0052cc; /* Darker Blue */
+    --card-hover: #f0f8ff; /* Light Blue */
     --font-family: 'Poppins', sans-serif;
 }
 
@@ -45,7 +45,8 @@ nav ul li a {
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
     color: var(--secondary-color);
 }
 
@@ -78,8 +79,7 @@ nav ul li a:hover {
 }
 
 .cta-btn:hover {
-    background: var(--button-hover);
-    color: var(--accent-color);
+    background: var(--card-hover);
 }
 
 /* Sections */
@@ -94,61 +94,27 @@ nav ul li a:hover {
     margin-bottom: 1.5rem;
 }
 
-/* Feature Grid */
-.feature-grid {
+/* Card Grid */
+.card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
-.feature-card {
-    background: var(--accent-color);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Pricing Grid */
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.pricing-card {
+.card {
     background: var(--accent-color);
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.pricing-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.pricing-card p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.pricing-card .btn {
-    background: var(--primary-color);
-    color: var(--accent-color);
-    padding: 0.8rem 1.5rem;
     text-decoration: none;
-    border-radius: 5px;
+    color: var(--text-color);
+    transition: transform 0.3s, background 0.3s;
 }
 
-.pricing-card .btn:hover {
-    background: var(--button-hover);
+.card:hover {
+    transform: scale(1.05);
+    background: var(--card-hover);
 }
 
 /* Footer */
