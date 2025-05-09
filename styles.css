@@ -1,10 +1,11 @@
 /* Root Variables */
 :root {
-    --primary: #546e7a; /* Blue-grey */
-    --secondary: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-    --accent: #ffffff; /* White */
-    --highlight: #cfd8dc; /* Lighter blue-grey */
-    --gradient: linear-gradient(135deg, #546e7a, #37474f); /* Gradients for buttons */
+    --primary-color: #0066ff; /* Blue */
+    --secondary-color: #f4f4f4; /* Light Grey */
+    --accent-color: #ffffff; /* White */
+    --text-color: #333333; /* Dark text */
+    --button-hover: #0052cc; /* Darker Blue */
+    --font-family: 'Poppins', sans-serif;
 }
 
 /* Universal Reset */
@@ -12,19 +13,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-family);
 }
 
 /* Body */
 body {
-    background: url('https://via.placeholder.com/2000x1000') no-repeat center center fixed;
-    background-size: cover;
-    color: var(--primary);
-    text-align: center;
+    color: var(--text-color);
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 /* Header */
@@ -33,13 +28,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: var(--primary);
-    color: var(--accent);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    opacity: 0.9;
+    background: var(--primary-color);
+    color: var(--accent-color);
 }
 
 nav ul {
@@ -49,37 +39,22 @@ nav ul {
 
 nav ul li a {
     margin-left: 1rem;
-    color: var(--accent);
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    color: var(--highlight);
+nav ul li a:hover {
+    color: var(--secondary-color);
 }
 
-/* Main Section */
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-}
-
-/* Hero */
+/* Hero Section */
 .hero {
+    background: var(--primary-color);
+    color: var(--accent-color);
+    text-align: center;
     padding: 5rem 2rem;
-    background: var(--gradient);
-    color: var(--accent);
-    border-radius: 15px;
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    backdrop-filter: blur(5px);
 }
 
 .hero-content h1 {
@@ -92,82 +67,95 @@ main {
     margin-bottom: 2rem;
 }
 
-.cta-buttons .btn {
-    background: var(--primary);
-    padding: 0.8rem 1.5rem;
-    color: var(--accent);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 1rem;
+.cta-btn {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
-.cta-buttons .btn:hover {
-    background: var(--highlight);
-}
-
-.cta-buttons .btn-outline {
-    padding: 0.8rem 1.5rem;
-    background: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.cta-buttons .btn-outline:hover {
-    background: var(--highlight);
-    color: var(--accent);
+.cta-btn:hover {
+    background: var(--button-hover);
+    color: var(--accent-color);
 }
 
 /* Sections */
 .section {
-    padding: 6rem 2rem;
-    max-width: 90%;
-    margin: auto;
+    padding: 4rem 2rem;
+    text-align: center;
+    background: var(--secondary-color);
 }
 
 .section-title h2 {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-.tile-grid {
+/* Feature Grid */
+.feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
-.tile {
-    background: var(--secondary);
-    color: var(--primary);
-    padding: 1.5rem;
+.feature-card {
+    background: var(--accent-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Pricing Grid */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.pricing-card {
+    background: var(--accent-color);
+    padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.tile:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.tile h3 {
+.pricing-card h3 {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
-    font-size: 1.3rem;
 }
 
-.tile p {
-    font-size: 1rem;
+.pricing-card p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-card .btn {
+    background: var(--primary-color);
+    color: var(--accent-color);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pricing-card .btn:hover {
+    background: var(--button-hover);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    background: var(--primary);
-    color: var(--accent);
+    background: var(--primary-color);
+    color: var(--accent-color);
     padding: 1rem;
-    margin-top: auto;
+    margin-top: 2rem;
 }
