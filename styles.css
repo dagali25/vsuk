@@ -145,6 +145,32 @@ nav ul li a:hover {
     color: var(--accent);
 }
 
+/* Gallery Section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-items: center;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
 /* CTA Section */
 .cta-section {
     background: var(--gradient);
