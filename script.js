@@ -7,57 +7,24 @@ document.querySelectorAll('nav ul li a').forEach(link => {
     });
 });
 
-// Mobile Menu Toggle
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const nav = document.querySelector('nav');
+// Enlarge Images in the Gallery
+const galleryItems = document.querySelectorAll('.gallery-item img');
+const body = document.body;
 
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        mobileMenuBtn.innerHTML = nav.classList.contains('active') 
-            ? '<i class="fas fa-times"></i>' 
-            : '<i class="fas fa-bars"></i>';
-    });
-}
+galleryItems.forEach(item => {
+    item.addEventListener('click', e => {
+        const imageSrc = e.target.src;
+        const overlay = document.createElement('div');
+        overlay.className = 'enlarged-image';
+        overlay.innerHTML = `
+            <button class="close-btn">&times;</button>
+            <img src="${imageSrc}" alt="Enlarged Image">
+        `;
+        body.appendChild(overlay);
 
-// Dynamic Feature Cards Animation
-const featureCards = document.querySelectorAll('.feature-card');
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.2 });
-
-featureCards.forEach(card => observer.observe(card));
-
-// Highlight Current Section in Navigation
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav ul li a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 60;
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
-        }
+        const closeButton = overlay.querySelector('.close-btn');
+        closeButton.addEventListener('click', () => {
+            body.removeChild(overlay);
+        });
     });
 });
-
-// Call to Action Button Click
-const ctaButton = document.querySelector('.cta-section .btn');
-if (ctaButton) {
-    ctaButton.addEventListener('click', () => {
-        alert('Thank you for signing up! We will contact you shortly.');
-    });
-}
