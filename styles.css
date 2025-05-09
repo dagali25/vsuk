@@ -1,10 +1,10 @@
 /* Root Variables */
 :root {
-    --primary-color: #0f0f3d; /* Deep Blue */
-    --secondary-color: #1a1a57; /* Darker Blue */
-    --accent-color: #00ffcc; /* Neon Cyan */
+    --primary-color: #000000; /* Black */
+    --secondary-color: #1a1a1a; /* Darker Black */
+    --accent-color: #FFD700; /* Gold */
     --text-color: #ffffff; /* White */
-    --hover-glow: #33ffcc; /* Glow Effect */
+    --hover-glow: #FFD700; /* Gold Glow Effect */
     --font-header: 'Orbitron', sans-serif;
     --font-body: 'Roboto', sans-serif;
 }
@@ -25,7 +25,7 @@ body {
     text-align: center;
 }
 
-/* Header */
+/* Fixed Header */
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -33,6 +33,10 @@ body {
     padding: 1rem 2rem;
     background: var(--secondary-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav ul {
@@ -59,6 +63,7 @@ nav ul li a:hover {
     color: var(--accent-color);
     text-align: center;
     padding: 5rem 2rem;
+    margin-top: 4rem; /* To account for the fixed header */
 }
 
 .hero-content h1 {
