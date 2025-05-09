@@ -21,6 +21,7 @@ body {
     background-color: var(--secondary);
     color: var(--accent);
     line-height: 1.6;
+    text-align: center; /* Center text globally */
 }
 
 /* Header */
@@ -132,28 +133,25 @@ nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .feature-card {
     background: var(--secondary);
-    padding: 2rem;
     border: 2px solid var(--primary);
+    padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.feature-card h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
+    color: var(--accent);
 }
 
 /* CTA Section */
 .cta-section {
     background: var(--gradient);
     color: var(--accent);
-    text-align: center;
     padding: 4rem 2rem;
     border-radius: 10px;
+    text-align: center;
 }
 
 .cta-section .btn {
@@ -163,7 +161,6 @@ nav ul li a:hover {
 /* Footer */
 footer {
     background: var(--secondary);
-    text-align: center;
     padding: 2rem;
     color: var(--text-muted);
 }
