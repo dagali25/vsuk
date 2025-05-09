@@ -1,10 +1,10 @@
 /* Root Variables */
 :root {
     --primary-color: #000000; /* Black */
-    --secondary-color: #1a1a1a; /* Darker Black */
+    --secondary-color: #1a1a1a; /* Dark Black */
     --accent-color: #FFD700; /* Gold */
     --text-color: #ffffff; /* White */
-    --hover-glow: #FFD700; /* Gold Glow Effect */
+    --hover-glow: #FFD700;
     --font-header: 'Orbitron', sans-serif;
     --font-body: 'Roboto', sans-serif;
 }
@@ -25,18 +25,18 @@ body {
     text-align: center;
 }
 
-/* Fixed Header */
+/* Header */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     background: var(--secondary-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -93,7 +93,7 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Sections */
+/* Section */
 .section {
     padding: 4rem 2rem;
     background: var(--secondary-color);
@@ -129,7 +129,7 @@ nav ul li a:hover {
     box-shadow: 0 0 15px var(--hover-glow);
 }
 
-/* Contact Form Section */
+/* Contact Form */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -139,43 +139,11 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.contact-form .form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.contact-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 5px;
-    background: var(--secondary-color);
-    color: var(--text-color);
-    font-size: 1rem;
-    outline: none;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #aaa;
-}
-
 .contact-form button {
-    display: block;
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--primary-color);
     background: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.8rem;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -189,9 +157,8 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    text-align: center;
     background: var(--secondary-color);
-    color: var(--text-color);
     padding: 1rem;
-    margin-top: 2rem;
+    color: var(--text-color);
+    text-align: center;
 }
