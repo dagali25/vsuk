@@ -1,10 +1,10 @@
 /* Root Variables */
 :root {
-    --primary: #4caf50; /* Green */
-    --secondary: #1b1b1b; /* Dark background */
-    --accent: #ffffff; /* White for text */
-    --highlight: #e0f7fa; /* Light teal for hover */
-    --gradient: linear-gradient(135deg, #4caf50, #087f23); /* Gradients for buttons */
+    --primary: #546e7a; /* Blue-grey */
+    --secondary: #eceff1; /* Light grey */
+    --accent: #ffffff; /* White */
+    --highlight: #cfd8dc; /* Lighter blue-grey */
+    --gradient: linear-gradient(135deg, #546e7a, #37474f); /* Gradients for buttons */
 }
 
 /* Universal Reset */
@@ -18,7 +18,7 @@
 /* Body */
 body {
     background-color: var(--secondary);
-    color: var(--accent);
+    color: var(--primary);
     text-align: center;
     line-height: 1.6;
 }
@@ -29,7 +29,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: var(--secondary);
+    background: var(--primary);
     color: var(--accent);
     position: fixed;
     width: 100%;
@@ -50,7 +50,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--primary);
+    color: var(--highlight);
 }
 
 /* Hero */
@@ -59,6 +59,7 @@ nav ul li a:hover {
     background: var(--gradient);
     color: var(--accent);
     border-radius: 15px;
+    margin-top: 4rem;
 }
 
 .hero-content h1 {
@@ -93,8 +94,8 @@ nav ul li a:hover {
 }
 
 .tile {
-    background: var(--secondary);
-    color: var(--accent);
+    background: var(--accent);
+    color: var(--primary);
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -105,6 +106,7 @@ nav ul li a:hover {
 .tile:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    background: var(--highlight);
 }
 
 .tile img {
@@ -115,6 +117,7 @@ nav ul li a:hover {
 /* Footer */
 footer {
     padding: 1rem;
-    background: var(--secondary);
+    background: var(--primary);
     color: var(--accent);
+    margin-top: 2rem;
 }
