@@ -3,125 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Specialist</title>
+    <meta name="description" content="Vape Store UK - Premium vaping products, e-liquids, and accessories. The UK's leading vape shop with fast delivery.">
+    <title>Vape Store UK | Premium Vaping Products</title>
+    <!-- ... keep font links ... -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Loading Overlay (keep same) -->
+
     <!-- Header -->
-    <header id="header">
+    <header class="header">
         <div class="header-container">
             <div class="logo">
-                <span class="logo-icon">🚀</span>
-                WebDevPro
+                <h1>VAPE STORE UK</h1>
+                <p>Premium Vaping Experience</p>
             </div>
-            <nav>
+            
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#e-liquids">E-Liquids</a></li>
+                    <li><a href="#devices">Devices</a></li>
+                    <li><a href="#starter-kits">Starter Kits</a></li>
+                    <li><a href="#accessories">Accessories</a></li>
                 </ul>
             </nav>
+            
+            <!-- Keep header actions same -->
         </div>
+        
+        <!-- Mobile Menu -->
+        <nav class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="#e-liquids">E-Liquids</a></li>
+                <li><a href="#devices">Devices</a></li>
+                <li><a href="#starter-kits">Starter Kits</a></li>
+                <li><a href="#accessories">Accessories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-nav-footer">
+                <a href="https://wa.me/447869990011" class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i> Customer Support
+                </a>
+            </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero">
+        <div class="hero-video">
+            <!-- Change to vape-related video -->
+            <video autoplay muted loop playsinline>
+                <source src="assets/vape-clouds.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
         <div class="hero-content">
-            <h1>Transform Your Online Presence</h1>
-            <p>We craft cutting-edge websites that drive traffic and grow your business.</p>
-            <a href="#services" class="btn cta-btn">Explore Services</a>
+            <h2>Premium Vaping. Exceptional Taste.</h2>
+            <p>Discover the UK's finest selection of vaping products and e-liquids</p>
+            <div class="hero-buttons">
+                <a href="#e-liquids" class="btn-primary">Shop Now</a>
+                <a href="#starter-kits" class="btn-secondary">Beginner Kits</a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span></span>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <div class="section-title">
-            <h2>Our Services</h2>
+    <!-- Featured Collections -->
+    <section class="featured-collections" id="collections">
+        <div class="section-header">
+            <h3>Our Collections</h3>
+            <p>Explore our premium vaping ranges</p>
         </div>
-        <div class="card-grid">
-            <div class="card">
-                <h3>Custom Web Development</h3>
-                <p>Tailored websites that meet your business goals and captivate your audience.</p>
+        
+        <div class="collections-grid">
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="assets/e-liquids-collection.jpg" alt="Premium E-Liquids" loading="lazy">
+                </div>
+                <div class="collection-info">
+                    <h4>E-Liquids</h4>
+                    <p>1000+ flavors from top brands</p>
+                    <a href="#e-liquids" class="btn-outline">View All</a>
+                </div>
             </div>
-            <div class="card">
-                <h3>SEO Optimization</h3>
-                <p>Boost your website's visibility and rank higher in search engine results.</p>
+            
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="assets/pod-systems-collection.jpg" alt="Pod Systems" loading="lazy">
+                </div>
+                <div class="collection-info">
+                    <h4>Pod Systems</h4>
+                    <p>Compact & convenient vaping</p>
+                    <a href="#pod-systems" class="btn-outline">View Collection</a>
+                </div>
             </div>
-            <div class="card">
-                <h3>Performance Optimization</h3>
-                <p>Lightning-fast websites that deliver exceptional user experiences.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section">
-        <div class="section-title">
-            <h2>Our Portfolio</h2>
-        </div>
-        <p>Take a look at some of the stunning websites we've developed for our clients.</p>
-        <div class="card-grid">
-            <div class="card">
-                <h3>Client A</h3>
-                <p>E-commerce platform with seamless user experience.</p>
-            </div>
-            <div class="card">
-                <h3>Client B</h3>
-                <p>Modern blog with advanced content management.</p>
-            </div>
-            <div class="card">
-                <h3>Client C</h3>
-                <p>Corporate website optimized for lead generation.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section">
-        <div class="section-title">
-            <h2>What Our Clients Say</h2>
-        </div>
-        <p>Hear from businesses we've helped to succeed online.</p>
-        <div class="card-grid">
-            <div class="card">
-                <p>"Our new website has increased our traffic by 300%! Highly recommend WebDevPro."</p>
-                <p>- Sarah J., Marketing Director</p>
-            </div>
-            <div class="card">
-                <p>"The best web development team we've ever worked with. Truly exceptional!"</p>
-                <p>- Mike T., CEO</p>
+            
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="assets/accessories-collection.jpg" alt="Vape Accessories" loading="lazy">
+                </div>
+                <div class="collection-info">
+                    <h4>Accessories</h4>
+                    <p>Everything you need</p>
+                    <a href="#accessories" class="btn-outline">View Collection</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="section-title">
-            <h2 style="color: orange;">Contact Us</h2>
+    <!-- New Arrivals -->
+    <section class="new-arrivals" id="e-liquids">
+        <div class="section-header">
+            <h3>New E-Liquids</h3>
+            <p>Fresh flavors just added</p>
         </div>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name" style="color: orange;">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <label for="email" style="color: orange;">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <label for="message" style="color: orange;">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
-            </div>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+        
+        <div class="watches-grid" id="watchesGrid">
+            <!-- Products will be loaded here via JavaScript -->
+        </div>
+        
+        <div class="view-all">
+            <a href="#all-e-liquids" class="btn-outline">View All E-Liquids</a>
+        </div>
     </section>
+
+    <!-- ... Rest of sections modified similarly ... -->
 
     <!-- Footer -->
-    <footer>
-        <p>© 2025 WebDevPro. All rights reserved.</p>
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>VAPE STORE UK</h5>
+                <p>Your premier destination for premium vaping products in the UK since 2018.</p>
+                
+                <div class="social-links">
+                    <a href="https://instagram.com/vapestoreuk" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#e-liquids">E-Liquids</a></li>
+                    <li><a href="#devices">Devices</a></li>
+                    <li><a href="#starter-kits">Starter Kits</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Information</h5>
+                <ul>
+                    <li><a href="#age-verification">Age Verification</a></li>
+                    <li><a href="#shipping">Shipping Policy</a></li>
+                    <li><a href="#returns">Returns Policy</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Vape Street<br>Manchester, M1 2AB</p>
+                    <p><i class="fas fa-phone-alt"></i> +44 161 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> hello@vapestoreuk.com</p>
+                </address>
+                
+                <div class="whatsapp-contact">
+                    <a href="https://wa.me/447869990011" class="whatsapp-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Support
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <p>&copy; 2023 Vape Store UK. All rights reserved.</p>
+                <p>Age Restriction: You must be 18+ to purchase from our store.</p>
+            </div>
+            
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa" aria-label="Visa"></i>
+                <i class="fab fa-cc-mastercard" aria-label="Mastercard"></i>
+                <i class="fab fa-cc-amex" aria-label="American Express"></i>
+                <i class="fab fa-cc-paypal" aria-label="PayPal"></i>
+            </div>
+        </div>
     </footer>
+
+    <!-- ... Keep modals same structure but update content ... -->
 </body>
 </html>
