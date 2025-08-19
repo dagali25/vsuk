@@ -1,119 +1,98 @@
-// Vape product data
-const vapeData = [
-    {
-        id: 1,
-        name: "Dinner Lady Lemon Tart",
-        reference: "DL-LT-60ML",
-        price: 12.99,
-        category: "E-Liquid",
-        type: "Dessert",
-        flavor: "Lemon Tart",
-        strength: "3mg",
-        size: "60ml",
-        description: "Award-winning lemon tart flavor with a perfect balance of zesty lemon and sweet pastry. 70/30 VG/PG ratio.",
-        images: [
-            "assets/lemon-tart-1.jpg",
-            "assets/lemon-tart-2.jpg",
-            "assets/lemon-tart-3.jpg"
-        ],
-        limited: false,
-        stock: 50
-    },
-    {
-        id: 2,
-        name: "Vaporesso XROS 3 Pod Kit",
-        reference: "VAP-XROS3-KIT",
-        price: 24.99,
-        category: "Pod System",
-        type: "Starter Kit",
-        battery: "1000mAh",
-        pods: "0.6Ω & 1.0Ω",
-        features: "Adjustable airflow, USB-C charging",
-        description: "Compact and powerful pod system with improved flavor and adjustable airflow. Perfect for beginners and experienced vapers alike.",
-        images: [
-            "assets/xros3-1.jpg",
-            "assets/xros3-2.jpg",
-            "assets/xros3-3.jpg"
-        ],
-        limited: false,
-        stock: 25
-    },
-    {
-        id: 3,
-        name: "Nasty Juice Cush Man",
-        reference: "NJ-CM-50ML",
-        price: 14.99,
-        category: "E-Liquid",
-        type: "Fruit",
-        flavor: "Mango",
-        strength: "6mg",
-        size: "50ml",
-        description: "Bold mango flavor with a hint of mint. One of the most popular fruit flavors in the UK. 70/30 VG/PG ratio.",
-        images: [
-            "assets/cushman-1.jpg",
-            "assets/cushman-2.jpg",
-            "assets/cushman-3.jpg"
-        ],
-        limited: false,
-        stock: 35
-    },
-    {
-        id: 4,
-        name: "Geekvape Aegis Legend 2",
-        reference: "GK-L2-KIT",
-        price: 59.99,
-        category: "Mod Kit",
-        type: "Advanced",
-        battery: "Dual 18650",
-        power: "200W",
-        features: "Waterproof, shockproof, dustproof",
-        description: "The most durable mod kit on the market. IP68 rated waterproof and shockproof design with advanced chipset.",
-        images: [
-            "assets/aegis-1.jpg",
-            "assets/aegis-2.jpg",
-            "assets/aegis-3.jpg"
-        ],
-        limited: true,
-        stock: 8
-    },
-    {
-        id: 5,
-        name: "Elux Legend 3500 Puffs",
-        reference: "ELX-LGND-3500",
-        price: 5.99,
-        category: "Disposable",
-        type: "Fruit",
-        flavor: "Mixed Berries",
-        strength: "20mg",
-        puffs: "3500",
-        description: "Convenient disposable vape with 3500 puffs and 20mg nicotine salt. No charging or refilling needed.",
-        images: [
-            "assets/elux-1.jpg",
-            "assets/elux-2.jpg",
-            "assets/elux-3.jpg"
-        ],
-        limited: false,
-        stock: 100
-    },
-    {
-        id: 6,
-        name: "Cotton Bacon Prime",
-        reference: "CB-PRIME-10G",
-        price: 4.99,
-        category: "Accessory",
-        type: "Wicking",
-        material: "Organic cotton",
-        quantity: "10g",
-        description: "Premium organic cotton for rebuildable atomizers. Ultra-clean flavor and excellent wicking properties.",
-        images: [
-            "assets/cotton-1.jpg",
-            "assets/cotton-2.jpg",
-            "assets/cotton-3.jpg"
-        ],
-        limited: false,
-        stock: 75
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('nav');
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
     }
-];
-
-// Update all watch-related functions to use vapeData instead
-// ... rest of the JavaScript remains structurally the same but references vape products ...
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                }
+            }
+        });
+    });
+    
+    // Form submission handling
+    const callbackForm = document.getElementById('callbackForm');
+    if (callbackForm) {
+        callbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const issue = document.getElementById('issue').value;
+            
+            // In a real application, you would send this data to your server
+            // For this example, we'll just show an alert
+            alert(`Thank you ${name}! We'll call you at ${phone} shortly. Our plumber near ${location} will contact you about your ${issue} issue.`);
+            
+            // Reset form
+            callbackForm.reset();
+        });
+    }
+    
+    // Add structured data for SEO
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Plumber",
+        "name": "Berkshire Emergency Plumbers",
+        "description": "24/7 Emergency Plumber in Berkshire. Fast response, no call-out fee. Fixed prices, local plumbers available anytime for plumbing emergencies.",
+        "url": "https://www.berkshireemergencyplumbers.co.uk",
+        "telephone": "+44-118-901-2345",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Berkshire",
+            "addressCountry": "UK"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "51.4226",
+            "longitude": "-0.6429"
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "51.4226",
+                "longitude": "-0.6429"
+            },
+            "geoRadius": "30000"
+        },
+        "sameAs": [
+            "https://www.facebook.com/berkshireemergencyplumbers",
+            "https://twitter.com/berkshireplumb",
+            "https://www.instagram.com/berkshireemergencyplumbers"
+        ]
+    };
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+});
